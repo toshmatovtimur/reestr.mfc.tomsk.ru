@@ -76,7 +76,7 @@ class Registry extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getFkApplicant()
+    public function getApplicant()
     {
         return $this->hasOne(Applicant::class, ['id' => 'fk_applicant']);
     }
@@ -86,7 +86,7 @@ class Registry extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getFkPay()
+    public function getPay()
     {
         return $this->hasOne(PayAmount::class, ['id' => 'fk_pay']);
     }
@@ -96,7 +96,7 @@ class Registry extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getFkSolution()
+    public function getSolution()
     {
         return $this->hasOne(SolutionType::class, ['id' => 'fk_solution']);
     }

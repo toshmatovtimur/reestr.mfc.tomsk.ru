@@ -3,6 +3,7 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "locality".
@@ -12,7 +13,7 @@ use Yii;
  *
  * @property Applicant[] $applicants
  */
-class Locality extends \yii\db\ActiveRecord
+class Locality extends ActiveRecord
 {
     /**
      * {@inheritdoc}

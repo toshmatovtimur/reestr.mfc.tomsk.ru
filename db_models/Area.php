@@ -3,6 +3,7 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "area".
@@ -12,7 +13,7 @@ use Yii;
  *
  * @property Applicant[] $applicants
  */
-class Area extends \yii\db\ActiveRecord
+class Area extends ActiveRecord
 {
     /**
      * {@inheritdoc}

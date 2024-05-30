@@ -3,6 +3,7 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "solution_type".
@@ -12,7 +13,7 @@ use Yii;
  *
  * @property Registry[] $registries
  */
-class Solution_type extends \yii\db\ActiveRecord
+class Solution_type extends ActiveRecord
 {
     /**
      * {@inheritdoc}

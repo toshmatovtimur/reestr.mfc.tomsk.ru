@@ -3,6 +3,7 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "applicant".
@@ -22,7 +23,7 @@ use Yii;
  * @property Privileges $fkPrivilegia
  * @property Registry[] $registries
  */
-class Applicant extends \yii\db\ActiveRecord
+class Applicant extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -72,7 +73,7 @@ class Applicant extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getFkArea()
+    public function getArea()
     {
         return $this->hasOne(Area::class, ['id' => 'fk_area']);
     }
@@ -82,7 +83,7 @@ class Applicant extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getFkLocality()
+    public function getLocality()
     {
         return $this->hasOne(Locality::class, ['id' => 'fk_locality']);
     }
@@ -92,7 +93,7 @@ class Applicant extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getFkPrivilegia()
+    public function getPrivilegia()
     {
         return $this->hasOne(Privileges::class, ['id' => 'fk_privilegia']);
     }

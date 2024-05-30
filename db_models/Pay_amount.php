@@ -3,6 +3,7 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "pay_amount".
@@ -12,7 +13,7 @@ use Yii;
  *
  * @property Registry[] $registries
  */
-class Pay_amount extends \yii\db\ActiveRecord
+class Pay_amount extends ActiveRecord
 {
     /**
      * {@inheritdoc}

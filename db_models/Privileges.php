@@ -3,6 +3,7 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "privileges".
@@ -12,7 +13,7 @@ use Yii;
  *
  * @property Applicant[] $applicants
  */
-class Privileges extends \yii\db\ActiveRecord
+class Privileges extends ActiveRecord
 {
     /**
      * {@inheritdoc}
