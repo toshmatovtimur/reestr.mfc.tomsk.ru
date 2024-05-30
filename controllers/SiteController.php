@@ -123,6 +123,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        // Привет мир
         return $this->render('about');
     }
 }
