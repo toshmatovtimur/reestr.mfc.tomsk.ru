@@ -1,8 +1,8 @@
 <?php
 
-	use yii\symfonymailer\Mailer;
+use yii\symfonymailer\Mailer;
 
-	$params = require __DIR__ . '/params.php';
+$params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
