@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <a href="../user/index">
                         <h2>Пользователи</h2>
                     </a>
-                    <p>Это компонент, который управляет информацией о пользователях на веб-сайте.</p>
+                    <p>Компонент, который управляет информацией о пользователях на веб-сайте.</p>
                 </div>
             </div>
             <div class="col d-flex align-items-start">
@@ -31,9 +31,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div>
                     <a href="../empty">
-                        <h2>Модуль еще не занят</h2>
+                        <h2>Районы</h2>
                     </a>
-                    <p>Это компонент, который позволяет пользователям создавать, управлять и публиковать контент на веб-сайте.</p>
+                    <p>Список районов</p>
                 </div>
             </div>
             <div class="col d-flex align-items-start">
@@ -42,9 +42,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div>
                     <a href="../admin/empty">
-                        <h2>Модуль еще не занят</h2>
+                        <h2>Населенные пункты</h2>
                     </a>
-                    <p>Статистика постов может помочь вам понять, какой контент наиболее эффективен для вашей аудитории. </p>
+                    <p>Список населенных пунктов </p>
                 </div>
             </div>
             <div class="col d-flex align-items-start">
@@ -53,9 +53,31 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div>
                     <a href="../admin/empty">
-                        <h2>Модуль еще не занят</h2>
+                        <h2>Выплаты</h2>
                     </a>
-                    <p>Модуль категории страниц (пополняемый справочник). </p>
+                    <p>Модуль категории выплат (пополняемый справочник). </p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                    <a href="../admin/empty">
+                        <h2>Льготы</h2>
+                    </a>
+                    <p>Модуль категории льгот (пополняемый справочник). </p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                    <a href="../admin/empty">
+                        <h2>Решения</h2>
+                    </a>
+                    <p>Модуль категории решений (пополняемый справочник). </p>
                 </div>
             </div>
         </div>
