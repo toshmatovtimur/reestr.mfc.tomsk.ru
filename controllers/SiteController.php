@@ -20,7 +20,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout', 'index', 'login'],
+                'only' => ['logout', 'index', 'login', 'test'],
                 'rules' => [
                     [
                         'actions' => ['logout'],
@@ -36,7 +36,7 @@ class SiteController extends Controller
                         }
                     ],
                     [
-                        'actions' => ['login'],
+                        'actions' => ['login', 'test'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -71,6 +71,10 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionTest() // Displays homepage.
+    {
+        return $this->render('test');
+    }
 
     public function actionLogin() // Login action.
     {

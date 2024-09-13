@@ -71,6 +71,6 @@ class UserIdentity extends Users implements IdentityInterface
 
     public function validatePassword($password)
     {
-        return $this->passwopt === $password;
+        return $this->passwopt === md5($password . \Yii::$app->params['sol']);
     }
 }

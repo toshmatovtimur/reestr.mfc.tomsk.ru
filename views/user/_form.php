@@ -18,10 +18,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'passwopt')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'roles')->textInput() ?>
+    <?= $form->field($model, 'roles')->dropDownList(['1' => 'Администратор', '0' => 'Пользователь',]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

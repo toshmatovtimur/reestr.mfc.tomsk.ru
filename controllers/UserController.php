@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\db_models\Users;
 use app\models\UsersSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -18,17 +19,22 @@ class UserController extends Controller
      */
     public function behaviors()
     {
-        return array_merge(
-            parent::behaviors(),
-            [
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['index', 'view', 'update', 'create'],
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'update', 'create'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return \Yii::$app->user->identity->isAdmin();
+                        }
                     ],
                 ],
-            ]
-        );
+            ],
+        ];
     }
 
     /**
@@ -70,8 +76,11 @@ class UserController extends Controller
         $model = new Users();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'user_id' => $model->user_id]);
+            if ($model->load($this->request->post())) {
+                $model->passwopt =  md5($model->passwopt . \Yii::$app->params['sol']);
+                if($model->save()) {
+                    return $this->redirect(['view', 'user_id' => $model->user_id]);
+                }
             }
         } else {
             $model->loadDefaultValues();
@@ -93,8 +102,12 @@ class UserController extends Controller
     {
         $model = $this->findModel($user_id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'user_id' => $model->user_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $model->passwopt =  md5($model->passwopt . \Yii::$app->params['sol']);
+
+            if($model->save()) {
+                return $this->redirect(['view', 'user_id' => $model->user_id]);
+            }
         }
 
         return $this->render('update', [

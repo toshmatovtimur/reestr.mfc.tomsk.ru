@@ -19,8 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div>
 
-                    <a href="../admin">
-                        <h2>Модуль пользователи</h2>
+                    <a href="../user/index">
+                        <h2>Пользователи</h2>
                     </a>
                     <p>Это компонент, который управляет информацией о пользователях на веб-сайте.</p>
                 </div>
@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
                 </div>
                 <div>
-                    <a href="../post">
-                        <h2>Модуль контент</h2>
+                    <a href="../empty">
+                        <h2>Модуль еще не занят</h2>
                     </a>
                     <p>Это компонент, который позволяет пользователям создавать, управлять и публиковать контент на веб-сайте.</p>
                 </div>
@@ -41,8 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
                 </div>
                 <div>
-                    <a href="../admin/statistics">
-                        <h2>Модуль статистики</h2>
+                    <a href="../admin/empty">
+                        <h2>Модуль еще не занят</h2>
                     </a>
                     <p>Статистика постов может помочь вам понять, какой контент наиболее эффективен для вашей аудитории. </p>
                 </div>
@@ -52,8 +52,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
                 </div>
                 <div>
-                    <a href="../admin/category">
-                        <h2>Модуль категории</h2>
+                    <a href="../admin/empty">
+                        <h2>Модуль еще не занят</h2>
                     </a>
                     <p>Модуль категории страниц (пополняемый справочник). </p>
                 </div>
