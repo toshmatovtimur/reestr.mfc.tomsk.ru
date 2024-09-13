@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
                 </div>
                 <div>
-                    <a href="../empty">
+                    <a href="../area/index">
                         <h2>Районы</h2>
                     </a>
                     <p>Список районов</p>

@@ -3,6 +3,7 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "areas".
@@ -12,7 +13,7 @@ use Yii;
  *
  * @property Applicants[] $applicants
  */
-class Areas extends \yii\db\ActiveRecord
+class Areas extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -29,6 +30,7 @@ class Areas extends \yii\db\ActiveRecord
     {
         return [
             [['areaname'], 'string', 'max' => 120],
+            [['areaname'], 'unique', 'message' => 'Такой район уже существует!'],
         ];
     }
 
@@ -38,8 +40,9 @@ class Areas extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'area_id' => 'Area ID',
-            'areaname' => 'Areaname',
+            'areaname' => 'Район',
+            'area_id' => 'id района',
+
         ];
     }
 

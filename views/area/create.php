@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\db_models\Areas $model */
 
-$this->title = 'Create Areas';
-$this->params['breadcrumbs'][] = ['label' => 'Areas', 'url' => ['index']];
+$this->title = 'Добавить район';
+$this->params['breadcrumbs'][] = ['label' => 'Районы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="areas-create">

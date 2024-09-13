@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\db_models\Areas $model */
 
-$this->title = 'Update Areas: ' . $model->area_id;
-$this->params['breadcrumbs'][] = ['label' => 'Areas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->area_id, 'url' => ['view', 'area_id' => $model->area_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Обновить район: ' . $model->areaname;
+$this->params['breadcrumbs'][] = ['label' => 'Районы', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->areaname, 'url' => ['view', 'area_id' => $model->area_id]];
+$this->params['breadcrumbs'][] = 'Редактировать';
 ?>
 <div class="areas-update">
 

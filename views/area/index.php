@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /** @var app\models\AreaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Areas';
+$this->title = 'Районы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="areas-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Areas', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -29,11 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'area_id',
             'areaname',
+            'area_id',
             [
-                'class' => ActionColumn::className(),
+                'class' => ActionColumn::class,
                 'urlCreator' => function ($action, Areas $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'area_id' => $model->area_id]);
                  }
