@@ -32,18 +32,18 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <header id="header">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
+//        'brandLabel' => Yii::$app->name,
+//        'brandUrl' => Yii::$app->homeUrl,
         'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
     ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav'],
-        'items' => [
-            ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'О нас', 'url' => ['/site/about']],
-            Yii::$app->user->isGuest
-                ? ['label' => 'Авторизация', 'url' => ['/site/login']]
-                : '<li class="nav-item">'
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav'],
+            'items' => [
+                ['label' => 'Главная', 'url' => ['/site/index']],
+                ['label' => 'Администрирование', 'url' => ['/admin/index']],
+                Yii::$app->user->isGuest
+                    ? ['label' => 'Авторизация', 'url' => ['/site/login']]
+                    : '<li class="nav-item">'
                     . Html::beginForm(['/site/logout'])
                     . Html::submitButton(
                         'Выход (' . Yii::$app->user->identity->login . ')',
@@ -51,9 +51,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     )
                     . Html::endForm()
                     . '</li>'
-        ]
-    ]);
-    NavBar::end();
+            ]
+        ]);
+        NavBar::end();
+
+
     ?>
 </header>
 

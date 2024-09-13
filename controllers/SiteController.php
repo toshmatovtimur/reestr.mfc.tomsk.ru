@@ -20,12 +20,17 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout'],
+                'only' => ['logout', 'index', 'login'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'index'],
                         'allow' => true,
                         'roles' => ['@'],
+                    ],
+                    [
+                        'actions' => ['login'],
+                        'allow' => true,
+                        'roles' => ['?'],
                     ],
                 ],
             ],
@@ -66,22 +71,13 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if($model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            if(Yii::$app->user->identity->isAdmin()) {
+                return $this->redirect(['admin/index']);
+            } else {
                 return $this->goHome();
             }
-
-
         }
-
-
-//        if (Yii::$app->request->isPost) {
-//            $model->username = Yii::$app->request->post('login');
-//            $model->password = Yii::$app->request->post('passwopt');
-//            if($model->login()) {
-//                return $this->goHome();
-//            }
-//        }
 
         $model->passwopt = '';
         return $this->render('login', [
@@ -101,32 +97,4 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        // Привет мир
-        return $this->render('about');
-    }
 }

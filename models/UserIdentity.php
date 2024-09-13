@@ -23,7 +23,7 @@ class UserIdentity extends Users implements IdentityInterface
     /**
      * Вернет admin если пользователь Админ, иначе user;
      */
-    public static function isAdmin()
+    public function isAdmin()
     {
         if(!\Yii::$app->user->isGuest) {
             if(\Yii::$app->user->identity->roles === 1) {
@@ -43,6 +43,7 @@ class UserIdentity extends Users implements IdentityInterface
     {
         return $this->user_id;
     }
+
 
     public function getAuthKey()
     {
