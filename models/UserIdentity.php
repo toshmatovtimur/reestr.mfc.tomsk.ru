@@ -34,6 +34,20 @@ class UserIdentity extends Users implements IdentityInterface
         return false;
     }
 
+    /**
+     * Вернет true если пользователь Юзер
+     */
+    public function isUser()
+    {
+        if(!\Yii::$app->user->isGuest) {
+            if(\Yii::$app->user->identity->roles === 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static function findByUsername($login)
     {
         return static::findOne(['login' => $login]);

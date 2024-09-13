@@ -18,19 +18,15 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?= $form->field($model, 'user_id') ?>
 
-    <?= $form->field($model, 'firstname') ?>
-
-    <?= $form->field($model, 'middlename') ?>
-
-    <?= $form->field($model, 'lastname') ?>
+    <?= $form->field($model, 'fio') ?>
 
     <?= $form->field($model, 'login') ?>
 
-    <?php // echo $form->field($model, 'password') ?>
+    <?= $form->field($model, 'passwopt') ?>
 
-    <?php // echo $form->field($model, 'role') ?>
+    <?= $form->field($model, 'roles') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

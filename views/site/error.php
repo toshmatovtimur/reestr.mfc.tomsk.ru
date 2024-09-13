@@ -7,7 +7,7 @@
 
 use yii\helpers\Html;
 
-$this->title = $name;
+$this->title = 'Доступ запрещен';
 ?>
 <div class="site-error">
     <?php echo Html::img('@web/' . '403.png', ['alt' => '', 'width' => 600, 'class' => 'img-responsive']); ?>

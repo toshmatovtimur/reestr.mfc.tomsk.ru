@@ -23,9 +23,17 @@ class SiteController extends Controller
                 'only' => ['logout', 'index', 'login'],
                 'rules' => [
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
+                    ],
+                    [
+                        'actions' => ['index'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return \Yii::$app->user->identity->isUser();
+                        }
                     ],
                     [
                         'actions' => ['login'],
