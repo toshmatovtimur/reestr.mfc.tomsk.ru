@@ -13,7 +13,7 @@ use app\models\ContactForm;
 class SiteController extends Controller
 {
     /**
-     * {@inheritdoc}
+     * * * * Правила
      */
     public function behaviors()
     {
@@ -38,9 +38,7 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
+
     public function actions()
     {
         return [
@@ -54,33 +52,38 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return string
-     */
-    public function actionIndex()
+
+    public function actionIndex() // Displays homepage.
     {
         return $this->render('index');
     }
 
-    /**
-     * Login action.
-     *
-     * @return Response|string
-     */
-    public function actionLogin()
+
+    public function actionLogin() // Login action.
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        if ($model->load(Yii::$app->request->post())) {
+            if($model->login()) {
+                return $this->goHome();
+            }
+
+
         }
 
-        $model->password = '';
+
+//        if (Yii::$app->request->isPost) {
+//            $model->username = Yii::$app->request->post('login');
+//            $model->password = Yii::$app->request->post('passwopt');
+//            if($model->login()) {
+//                return $this->goHome();
+//            }
+//        }
+
+        $model->passwopt = '';
         return $this->render('login', [
             'model' => $model,
         ]);

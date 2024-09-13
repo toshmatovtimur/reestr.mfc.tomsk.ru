@@ -3,6 +3,8 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveQuery;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "users".
@@ -15,19 +17,20 @@ use Yii;
  *
  * @property Registryes[] $registryes
  */
-class Users extends \yii\db\ActiveRecord
+class Users extends ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
+
     public static function tableName()
     {
         return 'users';
     }
 
-    /**
-     * {@inheritdoc}
-     */
+    public static function findByUsername($login)
+    {
+        return static::findOne(['login' => $login]);
+    }
+
+
     public function rules()
     {
         return [
@@ -38,24 +41,22 @@ class Users extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
+
     public function attributeLabels()
     {
         return [
-            'user_id' => 'User ID',
-            'fio' => 'Fio',
-            'login' => 'Login',
-            'passwopt' => 'Passwopt',
-            'roles' => 'Roles',
+            'user_id' => 'id',
+            'fio' => 'ФИО',
+            'login' => 'Логин',
+            'passwopt' => 'Пароль',
+            'roles' => 'Роль',
         ];
     }
 
     /**
      * Gets query for [[Registryes]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getRegistryes()
     {
