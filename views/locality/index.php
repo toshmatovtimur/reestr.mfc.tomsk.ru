@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /** @var app\models\LocalitySearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Localityes';
+$this->title = 'Населенные пункты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="localityes-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Localityes', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить населенный пункт', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'locality_id',
             'localname',
+            'locality_id',
+
             [
-                'class' => ActionColumn::className(),
+                'class' => ActionColumn::class,
                 'urlCreator' => function ($action, Localityes $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'locality_id' => $model->locality_id]);
                  }

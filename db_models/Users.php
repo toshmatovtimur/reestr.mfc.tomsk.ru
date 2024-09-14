@@ -38,6 +38,8 @@ class Users extends ActiveRecord
             [['roles'], 'integer'],
             [['fio'], 'string', 'max' => 200],
             [['login', 'passwopt'], 'string', 'max' => 50],
+            [['login'], 'unique', 'message' => 'Логин занят'],
+            [['login'], 'required', 'message' => 'Поле не должны быть пустым.'],
         ];
     }
 

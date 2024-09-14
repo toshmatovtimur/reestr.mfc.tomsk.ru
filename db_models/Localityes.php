@@ -2,7 +2,8 @@
 
 namespace app\db_models;
 
-use Yii;
+use yii\db\ActiveQuery;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "localityes".
@@ -12,7 +13,7 @@ use Yii;
  *
  * @property Applicants[] $applicants
  */
-class Localityes extends \yii\db\ActiveRecord
+class Localityes extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -29,6 +30,8 @@ class Localityes extends \yii\db\ActiveRecord
     {
         return [
             [['localname'], 'string', 'max' => 120],
+            [['localname'], 'required', 'message' => 'Поле не должны быть пустым.'],
+            [['localname'], 'unique', 'message' => 'Населенный пункт с таким названием уже существует.'],
         ];
     }
 
@@ -38,15 +41,15 @@ class Localityes extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'locality_id' => 'Locality ID',
-            'localname' => 'Localname',
+            'locality_id' => 'id Населенного пункта',
+            'localname' => 'Населенный пункт',
         ];
     }
 
     /**
      * Gets query for [[Applicants]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getApplicants()
     {

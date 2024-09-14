@@ -2,7 +2,8 @@
 
 namespace app\db_models;
 
-use Yii;
+use yii\db\ActiveQuery;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "payamounts".
@@ -12,7 +13,7 @@ use Yii;
  *
  * @property Registryes[] $registryes
  */
-class Payamounts extends \yii\db\ActiveRecord
+class Payamounts extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -29,6 +30,8 @@ class Payamounts extends \yii\db\ActiveRecord
     {
         return [
             [['pay'], 'number'],
+            [['pay'], 'required', 'message' => 'Поле не должны быть пустым.'],
+            [['pay'], 'unique', 'message' => 'Выплата уже существует.'],
         ];
     }
 
@@ -38,15 +41,15 @@ class Payamounts extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'payamount_id' => 'Payamount ID',
-            'pay' => 'Pay',
+            'payamount_id' => 'id выплаты',
+            'pay' => 'Выплата',
         ];
     }
 
     /**
      * Gets query for [[Registryes]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getRegistryes()
     {

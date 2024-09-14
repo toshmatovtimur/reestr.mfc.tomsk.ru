@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /** @var app\models\PayamountSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Payamounts';
+$this->title = 'Выплаты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="payamounts-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Payamounts', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить выплату', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -30,10 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'payamount_id',
             'pay',
+            'payamount_id',
             [
-                'class' => ActionColumn::className(),
+                'class' => ActionColumn::class,
                 'urlCreator' => function ($action, Payamounts $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'payamount_id' => $model->payamount_id]);
                  }

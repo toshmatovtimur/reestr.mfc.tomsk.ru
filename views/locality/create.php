@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\db_models\Localityes $model */
 
-$this->title = 'Create Localityes';
-$this->params['breadcrumbs'][] = ['label' => 'Localityes', 'url' => ['index']];
+$this->title = 'Добавить населенный пункт';
+$this->params['breadcrumbs'][] = ['label' => 'Населенные пункты', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="localityes-create">

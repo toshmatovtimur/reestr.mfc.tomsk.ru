@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\db_models\Payamounts $model */
 
-$this->title = $model->payamount_id;
-$this->params['breadcrumbs'][] = ['label' => 'Payamounts', 'url' => ['index']];
+$this->title = $model->pay;
+$this->params['breadcrumbs'][] = ['label' => 'Выплаты', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'payamount_id' => $model->payamount_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'payamount_id' => $model->payamount_id], [
+        <?= Html::a('Обновить', ['Обновить', 'payamount_id' => $model->payamount_id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['Удалить', 'payamount_id' => $model->payamount_id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы действительно хотите удалить выплату?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,8 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'payamount_id',
             'pay',
+            'payamount_id',
         ],
     ]) ?>
 

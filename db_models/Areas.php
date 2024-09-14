@@ -30,7 +30,8 @@ class Areas extends ActiveRecord
     {
         return [
             [['areaname'], 'string', 'max' => 120],
-            [['areaname'], 'unique', 'message' => 'Такой район уже существует!'],
+            [['areaname'], 'unique', 'message' => 'Такой район уже существует.'],
+            [['areaname'], 'required', 'message' => 'Поле не должны быть пустым.'],
         ];
     }
 

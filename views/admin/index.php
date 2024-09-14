@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
                 </div>
                 <div>
-                    <a href="../admin/empty">
+                    <a href="../locality/index">
                         <h2>Населенные пункты</h2>
                     </a>
                     <p>Список населенных пунктов </p>
@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
                 </div>
                 <div>
-                    <a href="../admin/empty">
+                    <a href="../payamount/index">
                         <h2>Выплаты</h2>
                     </a>
                     <p>Модуль категории выплат (пополняемый справочник). </p>

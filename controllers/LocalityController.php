@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\db_models\Localityes;
 use app\models\LocalitySearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -18,17 +19,22 @@ class LocalityController extends Controller
      */
     public function behaviors()
     {
-        return array_merge(
-            parent::behaviors(),
-            [
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['index', 'view', 'update', 'create'],
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'update', 'create'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return \Yii::$app->user->identity->isAdmin();
+                        }
                     ],
                 ],
-            ]
-        );
+            ],
+        ];
     }
 
     /**

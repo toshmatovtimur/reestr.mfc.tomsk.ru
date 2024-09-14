@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\db_models\Localityes $model */
 
-$this->title = 'Update Localityes: ' . $model->locality_id;
-$this->params['breadcrumbs'][] = ['label' => 'Localityes', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->locality_id, 'url' => ['view', 'locality_id' => $model->locality_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Обновить населенный пункт: ' . $model->localname;
+$this->params['breadcrumbs'][] = ['label' => 'Населенные пункты', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->localname, 'url' => ['view', 'locality_id' => $model->locality_id]];
+$this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="localityes-update">
 
