@@ -37,7 +37,7 @@ class UserIdentity extends Users implements IdentityInterface
     /**
      * Вернет true если пользователь Юзер
      */
-    public function isUser()
+    public function isUser(): bool
     {
         if(!\Yii::$app->user->isGuest) {
             if(\Yii::$app->user->identity->roles === 0) {

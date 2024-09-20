@@ -39,7 +39,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav'],
             'items' => [
-                ['label' => 'Реестр', 'url' => ['/site/index']],
+                ['label' => 'Реестр', 'url' => ['/registry/index']],
                 ['label' => 'Администрирование', 'url' => ['/admin/index']],
                 Yii::$app->user->isGuest
                     ? ['label' => 'Авторизация', 'url' => ['/site/login']]

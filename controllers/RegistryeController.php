@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * RegistriesController implements the CRUD actions for Registryes model.
  */
-class RegistriesController extends Controller
+class RegistryeController extends Controller
 {
     /**
      * @inheritDoc
@@ -26,6 +26,14 @@ class RegistriesController extends Controller
                 'rules' => [
                     [
                         'actions' => ['index', 'view', 'update', 'create'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return \Yii::$app->user->identity->isUser();
+                        }
+                    ],
+                    [
+                        'actions' => ['index'],
                         'allow' => true,
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {

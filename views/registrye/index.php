@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\RegistriesSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Registryes';
+$this->title = 'Реестр';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="registryes-index">
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'dateoftheapp',
             //'usercreate_fk',
             [
-                'class' => ActionColumn::className(),
+                'class' => ActionColumn::class,
                 'urlCreator' => function ($action, Registryes $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'registry_id' => $model->registry_id]);
                  }
