@@ -10,7 +10,6 @@
 	{
         public function behaviors()
         {
-
             return [
                 'access' => [
                     'class' => AccessControl::class,
