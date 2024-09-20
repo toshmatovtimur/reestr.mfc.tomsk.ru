@@ -3,6 +3,8 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveQuery;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "solutiontypes".
@@ -12,7 +14,7 @@ use Yii;
  *
  * @property Registryes[] $registryes
  */
-class Solutiontypes extends \yii\db\ActiveRecord
+class Solutiontypes extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -29,6 +31,8 @@ class Solutiontypes extends \yii\db\ActiveRecord
     {
         return [
             [['solutionname'], 'string', 'max' => 50],
+            [['solutionname'], 'required', 'message' => 'Поле не должны быть пустым.'],
+            [['solutionname'], 'unique', 'message' => 'Решение уже существует.'],
         ];
     }
 
@@ -38,15 +42,15 @@ class Solutiontypes extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'solutiontype_id' => 'Solutiontype ID',
-            'solutionname' => 'Solutionname',
+            'solutiontype_id' => 'id Решения',
+            'solutionname' => 'Решение',
         ];
     }
 
     /**
      * Gets query for [[Registryes]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getRegistryes()
     {

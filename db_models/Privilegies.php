@@ -2,7 +2,8 @@
 
 namespace app\db_models;
 
-use Yii;
+use yii\db\ActiveQuery;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "privilegies".
@@ -12,7 +13,7 @@ use Yii;
  *
  * @property Applicants[] $applicants
  */
-class Privilegies extends \yii\db\ActiveRecord
+class Privilegies extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -29,6 +30,8 @@ class Privilegies extends \yii\db\ActiveRecord
     {
         return [
             [['privilegename'], 'string', 'max' => 120],
+            [['privilegename'], 'unique', 'message' => 'Льгота уже существует.'],
+            [['privilegename'], 'required', 'message' => 'Поле не должны быть пустым.'],
         ];
     }
 
@@ -38,15 +41,15 @@ class Privilegies extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'privilege_id' => 'Privilege ID',
-            'privilegename' => 'Privilegename',
+            'privilege_id' => 'id льготы',
+            'privilegename' => 'Льгота',
         ];
     }
 
     /**
      * Gets query for [[Applicants]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getApplicants()
     {

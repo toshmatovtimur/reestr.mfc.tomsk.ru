@@ -14,10 +14,10 @@
             return [
                 'access' => [
                     'class' => AccessControl::class,
-                    'only' => ['index'],
+                    'only' => ['index', 'test'],
                     'rules' => [
                         [
-                            'actions' => ['index'],
+                            'actions' => ['index', 'test'],
                             'allow' => true,
                             'roles' => ['@'],
                             'matchCallback' => function ($rule, $action) {
@@ -35,4 +35,11 @@
         {
             return $this->render('index');
         }
+
+
+        public function actionTest()
+        {
+            return $this->render('test');
+        }
+
 	}

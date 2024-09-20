@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\db_models\Privilegies $model */
 
-$this->title = 'Create Privilegies';
-$this->params['breadcrumbs'][] = ['label' => 'Privilegies', 'url' => ['index']];
+$this->title = 'Добавить льготу';
+$this->params['breadcrumbs'][] = ['label' => 'Льготы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="privilegies-create">

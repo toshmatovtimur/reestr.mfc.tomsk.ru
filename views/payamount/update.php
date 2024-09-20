@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\db_models\Payamounts $model */
 
-$this->title = 'Update Payamounts: ' . $model->payamount_id;
-$this->params['breadcrumbs'][] = ['label' => 'Payamounts', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->payamount_id, 'url' => ['view', 'payamount_id' => $model->payamount_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Обновить выплату: ' . $model->pay;
+$this->params['breadcrumbs'][] = ['label' => 'Выплаты', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->pay, 'url' => ['view', 'payamount_id' => $model->payamount_id]];
+$this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="payamounts-update">
 

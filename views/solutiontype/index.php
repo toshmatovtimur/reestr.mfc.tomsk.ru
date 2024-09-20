@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /** @var app\models\SolutiontypeSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Solutiontypes';
+$this->title = 'Решения';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="solutiontypes-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Solutiontypes', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить решение', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'solutiontype_id',
             'solutionname',
+            'solutiontype_id',
+
             [
-                'class' => ActionColumn::className(),
+                'class' => ActionColumn::class,
                 'urlCreator' => function ($action, Solutiontypes $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'solutiontype_id' => $model->solutiontype_id]);
                  }

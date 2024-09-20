@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\db_models\Solutiontypes $model */
 
-$this->title = 'Create Solutiontypes';
-$this->params['breadcrumbs'][] = ['label' => 'Solutiontypes', 'url' => ['index']];
+$this->title = 'Добавить решение';
+$this->params['breadcrumbs'][] = ['label' => 'Решения', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="solutiontypes-create">

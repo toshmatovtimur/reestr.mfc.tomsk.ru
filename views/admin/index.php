@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
                 </div>
                 <div>
-                    <a href="../admin/empty">
+                    <a href="../privilegie/index">
                         <h2>Льготы</h2>
                     </a>
                     <p>Модуль категории льгот (пополняемый справочник). </p>
@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
                 </div>
                 <div>
-                    <a href="../admin/empty">
+                    <a href="../solutiontype/index">
                         <h2>Решения</h2>
                     </a>
                     <p>Модуль категории решений (пополняемый справочник). </p>

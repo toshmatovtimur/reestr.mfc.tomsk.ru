@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /** @var app\models\PrivilegieSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Privilegies';
+$this->title = 'Льготы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="privilegies-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Privilegies', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить льготу', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -30,10 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'privilege_id',
             'privilegename',
+            'privilege_id',
+
             [
-                'class' => ActionColumn::className(),
+                'class' => ActionColumn::class,
                 'urlCreator' => function ($action, Privilegies $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'privilege_id' => $model->privilege_id]);
                  }
