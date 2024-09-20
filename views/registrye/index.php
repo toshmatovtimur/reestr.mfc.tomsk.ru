@@ -33,14 +33,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'applicant_fk',
             'serialandnumbersert',
             'dategetsert',
+            [
+                'attribute' => 'pay',
+                'value' => 'payamounts.pay'
+            ],
             'payamount_fk',
-            //'solution_fk',
-            //'dateandnumbsolutionsert',
-            //'comment:ntext',
-            //'trek',
-            //'mailingdate',
-            //'dateoftheapp',
-            //'usercreate_fk',
+            'solution_fk',
+            'dateandnumbsolutionsert',
+            'comment:ntext',
+            'trek',
+            'mailingdate',
+            'dateoftheapp',
+            'usercreate_fk',
             [
                 'class' => ActionColumn::class,
                 'urlCreator' => function ($action, Registryes $model, $key, $index, $column) {

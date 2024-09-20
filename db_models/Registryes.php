@@ -3,6 +3,7 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "registryes".
@@ -60,7 +61,7 @@ class Registryes extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'registry_id' => 'Registry ID',
+            'registry_id' => 'ID',
             'applicant_fk' => 'Applicant Fk',
             'serialandnumbersert' => 'Serialandnumbersert',
             'dategetsert' => 'Dategetsert',
@@ -78,9 +79,9 @@ class Registryes extends \yii\db\ActiveRecord
     /**
      * Gets query for [[ApplicantFk]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
-    public function getApplicantFk()
+    public function getApplicants()
     {
         return $this->hasOne(Applicants::class, ['applicant_id' => 'applicant_fk']);
     }
@@ -88,9 +89,9 @@ class Registryes extends \yii\db\ActiveRecord
     /**
      * Gets query for [[PayamountFk]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
-    public function getPayamountFk()
+    public function getPayamounts()
     {
         return $this->hasOne(Payamounts::class, ['payamount_id' => 'payamount_fk']);
     }
@@ -98,9 +99,9 @@ class Registryes extends \yii\db\ActiveRecord
     /**
      * Gets query for [[SolutionFk]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
-    public function getSolutionFk()
+    public function getSolutiontypes()
     {
         return $this->hasOne(Solutiontypes::class, ['solutiontype_id' => 'solution_fk']);
     }
@@ -108,9 +109,9 @@ class Registryes extends \yii\db\ActiveRecord
     /**
      * Gets query for [[UsercreateFk]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
-    public function getUsercreateFk()
+    public function getUsers()
     {
         return $this->hasOne(Users::class, ['user_id' => 'usercreate_fk']);
     }

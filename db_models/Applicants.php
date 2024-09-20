@@ -3,6 +3,7 @@
 namespace app\db_models;
 
 use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "applicants".
@@ -70,9 +71,9 @@ class Applicants extends \yii\db\ActiveRecord
     /**
      * Gets query for [[AreaFk]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
-    public function getAreaFk()
+    public function getAreas()
     {
         return $this->hasOne(Areas::class, ['area_id' => 'area_fk']);
     }
@@ -80,9 +81,9 @@ class Applicants extends \yii\db\ActiveRecord
     /**
      * Gets query for [[LocalityFk]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
-    public function getLocalityFk()
+    public function getLocalityes()
     {
         return $this->hasOne(Localityes::class, ['locality_id' => 'locality_fk']);
     }
@@ -90,9 +91,9 @@ class Applicants extends \yii\db\ActiveRecord
     /**
      * Gets query for [[PrivilegesFk]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
-    public function getPrivilegesFk()
+    public function getPrivilegies()
     {
         return $this->hasOne(Privilegies::class, ['privilege_id' => 'privileges_fk']);
     }
@@ -100,7 +101,7 @@ class Applicants extends \yii\db\ActiveRecord
     /**
      * Gets query for [[Registryes]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return ActiveQuery
      */
     public function getRegistryes()
     {

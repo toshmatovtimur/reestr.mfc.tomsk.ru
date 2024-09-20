@@ -32,14 +32,6 @@ class RegistryeController extends Controller
                             return \Yii::$app->user->identity->isUser();
                         }
                     ],
-                    [
-                        'actions' => ['index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                        'matchCallback' => function ($rule, $action) {
-                            return \Yii::$app->user->identity->isUser();
-                        }
-                    ],
                 ],
             ],
         ];

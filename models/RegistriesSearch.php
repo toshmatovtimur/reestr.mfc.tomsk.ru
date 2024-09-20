@@ -11,6 +11,9 @@ use app\db_models\Registryes;
  */
 class RegistriesSearch extends Registryes
 {
+
+    public $pay;
+
     /**
      * {@inheritdoc}
      */
@@ -18,7 +21,7 @@ class RegistriesSearch extends Registryes
     {
         return [
             [['registry_id', 'applicant_fk', 'payamount_fk', 'solution_fk', 'usercreate_fk'], 'integer'],
-            [['serialandnumbersert', 'dategetsert', 'dateandnumbsolutionsert', 'comment', 'trek', 'mailingdate', 'dateoftheapp'], 'safe'],
+            [['serialandnumbersert', 'dategetsert', 'dateandnumbsolutionsert', 'comment', 'trek', 'mailingdate', 'dateoftheapp', 'pay'], 'safe'],
         ];
     }
 
